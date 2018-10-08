@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Transformation</title>
+	<script src="lib/jquery.min.js"></script>
+	<style type="text/css">
+		.container>div{
+			display: inline;
+		}
+		/*This css is using for the blue button*/
+		#wrapper{
+			background: #0d6fba;
+			display: inline-block;
+			border-radius: 500px;
+			margin: 10px;
+			position: relative;
+			padding: 15px;
+			cursor: pointer;
+		}
+		.circle {
+			width: 40px;
+			height: 40px;
+			position: relative;
+		}
+		.line{
+			position: absolute;
+			height: 6px;
+			width: 100%;
+			background: #fff;
+			border-radius: 8px;
+			transition: all cubic-bezier(0.26,0.1,0.27,1.55) 0.35s;
+		}
+		.top{
+			top: 18%;
+		}
+		.middle{
+			top: 48%;
+		}
+		.bottom{
+			top: 78%;
+		}
+		/* This css using for tranform the close button change to hamburger button*/
+		.icon.close .top{
+			transform: rotate(45deg);
+			top: 48%;
+		}
+		.icon.close .middle,.icon.close .bottom{
+			transform: rotate(-45deg);
+			top: 48%;
+		}
+
+		/*This css is using for sidenavbar*/
+		.sidenav{
+			width: 370px;
+			left: 0;
+			background: orange;
+			transition: 0.6s;
+		}
+		.sidenav.hide{
+			width: 90px;
+			background: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<div class="sidenav">
+		<div class="container">
+			<div id="wrapper">
+				<div class="circle icon close">
+					<span class="line top"></span>
+					<span class="line middle"></span>
+					<span class="line bottom"></span>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+	<!-- Jquery is the framework of javascript 
+		 It always start with  " $ " 
+		 I will describe about step of Jquery below!
+	 	However you need to open tag <script> before using Javascript or Jquery
+	 -->
+	<script type="text/javascript">
+		// 1. Select the element that has id = wrapper and action when it was clicked.
+		$("#wrapper").click(
+			// 2. When the element that has id = wrapper was clicked, it will do below function
+			function () {
+				// 3. The element that had class = icon will add class = close into that element.
+				$(".icon").toggleClass("close");
+				// 4. The element that had class = sidenav will add class = hide into that element.
+				$(".sidenav").toggleClass("hide");
+			}
+		);
+		// Finally, you can see cleary when open it in a browser and use F12 you will see the elements class is added and removed when clicking the blue button.
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/*	purple #cf92fd
+	green #6effa8
+	pink #ffa7dc
+*/
+
+.tube{
+	border: 1px solid transparent;
+	border-radius: 45px;
+	width: 300px;
+	height: 51px;
+	margin: 20px auto;
+	display: inherit;
+	cursor: pointer;
+	background: #6effa8;
+	transition: 0.7s;
+}
+.tube:hover{
+	opacity: 0.6;
+}
+.tube:hover>#toggle-content{
+	color: black;
+}
+
+.tube.left{
+	background: #cf92fd;
+
+}
+
+.circle{
+	background: #fdfdfd;
+	border-radius: 50%;
+	width: 45px;
+	height: 45px;
+	margin: 3px 0 0 5px;
+	transition: 0.6s;
+	display: inherit;
+}
+
+.circle.left {
+	margin: 3px 0 0 250px;
+}
+
+#toggle-content{
+	margin: -39px 0 0px 0;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	transition: 0.6s;
+}
